@@ -23,6 +23,8 @@ func nativeTestMiddleware(w http.ResponseWriter,r *http.Request){
 }
 func main (){
 	app:=iris.New()
+
+	//以中间件的形式，会对所有的handler都使用上
 	irisMiddle:=iris.FromStd(negronilikeTestMiddleware)
 	nativeirisMiddleware:=iris.FromStd(nativeTestMiddleware)
 	app.Use(irisMiddle)
