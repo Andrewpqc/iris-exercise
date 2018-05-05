@@ -1,3 +1,10 @@
+/**
+多种装饰器
+
+
+ */
+
+
 package main
 
 import (
@@ -21,15 +28,23 @@ func negronilikeTestMiddleware(w http.ResponseWriter, r *http.Request, next http
 func nativeTestMiddleware(w http.ResponseWriter,r *http.Request){
 	fmt.Println("request url:",r.URL)
 }
+func myCustomMiddleware(w http.ResponseWriter,r *http.Request,next http.HandlerFunc){
+	fmt.Println("hhhh,this is only for /hhh")
+	next(w,r)
+}
+
 func main (){
 	app:=iris.New()
 
 	//以中间件的形式，会对所有的handler都使用上
-	irisMiddle:=iris.FromStd(negronilikeTestMiddleware)
-	nativeirisMiddleware:=iris.FromStd(nativeTestMiddleware)
-	app.Use(irisMiddle)
-	app.Use(nativeirisMiddleware)
-
+	//irisMiddle:=iris.FromStd(negronilikeTestMiddleware)
+	//nativeirisMiddleware:=iris.FromStd(nativeTestMiddleware)
+	myCustomMiddleware:=iris.FromStd(myCustomMiddleware)
+	//app.Use(irisMiddle)
+	//app.Use(nativeirisMiddleware)
+	app.Get("/hhh",myCustomMiddleware, func(ctx iris.Context) {
+		ctx.Text("from inner handler")
+	})
 	// Method GET: http://localhost:8080/
 	app.Get("/", func(ctx iris.Context) {
 		ctx.HTML("<h1> Home </h1>")
