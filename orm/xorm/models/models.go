@@ -14,5 +14,21 @@ type User struct {
 
 type Item struct{
 	Id int64
-	Name string
+	ItemName string
+	Price float32
+	Num int
 }
+
+
+type Detail struct {
+	Id int64
+	Job string
+	UserId int64 `xorm:"index"`
+}
+
+type UserDetail struct {
+	User `xorm:"extends"`
+	Detail `xorm:"extends"`
+}
+
+
