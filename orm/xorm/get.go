@@ -33,7 +33,7 @@ func main() {
 	fmt.Println(queryUser2)
 
 	//将查询到的数据存到user结构中
-	user:=models.User{}
+	user := models.User{}
 
 	_, err = engine.Get(&user)
 	// SELECT * FROM user LIMIT 1
@@ -42,25 +42,28 @@ func main() {
 	// SELECT * FROM user WHERE name = ? ORDER BY id DESC LIMIT 1
 
 	var name string
-	_, err = engine.Where("id = ?", id).Cols("name").Get(&name)
+	_, err = engine.Where("id = ?", 3).Cols("name").Get(&name)
 	// SELECT name FROM user WHERE id = ?
+	fmt.Println(name)
 
 	var id int64
 	_, err = engine.Where("name = ?", name).Cols("id").Get(&id)
+	fmt.Println(id)
 	_, err = engine.SQL("select id from user").Get(&id)
+	fmt.Println(id)
 	// SELECT id FROM user WHERE name = ?
 
 	var valuesMap = make(map[string]string)
-	_, err = engine.Where("id = ?", id).Get(&valuesMap)
+	_, err = engine.Where("id = ?", 1).Get(&valuesMap)
 	// SELECT * FROM user WHERE id = ?
+	fmt.Println("valueMap", valuesMap)
 
-	var valuesSlice = make([]interface{}, len(cols))
-	_, err = engine.Where("id = ?", id).Cols(cols...).Get(&valuesSlice)
+	var valuesSlice = make([]interface{}, 3)
+	_, err = engine.Where("id = ?", id).Cols(name).Get(&valuesSlice)
 	// SELECT col1, col2, col3 FROM user WHERE id = ?
-
+	fmt.Println(valuesSlice)
 	if err != nil {
 
 	}
-
 
 }
