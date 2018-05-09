@@ -1,0 +1,36 @@
+Time                   Status  Latency   IP         Method  Path
+2018/05/09 - 18:51:25  200     10.755µs  127.0.0.1  GET     /
+Time                   Status  Latency  IP         Method  Path
+2018/05/09 - 18:51:29  200     6.584µs  127.0.0.1  GET     /1
+Time                   Status  Latency  IP         Method  Path
+2018/05/09 - 18:51:32  200     8.6µs    127.0.0.1  GET     /2
+Time                   Status  Latency  IP         Method  Path
+2018/05/09 - 18:51:35  404     16.07µs  127.0.0.1  GET     /3
+Time                   Status  Latency  IP         Method  Path
+2018/05/09 - 18:51:36  200     5.452µs  127.0.0.1  GET     /
+Time                   Status  Latency   IP         Method  Path
+2018/05/09 - 18:52:19  200     11.737µs  127.0.0.1  GET     /
+Time                   Status  Latency  IP         Method  Path
+2018/05/09 - 18:52:20  200     7.029µs  127.0.0.1  GET     /
+Time                   Status  Latency   IP         Method  Path
+2018/05/09 - 18:52:20  200     11.134µs  127.0.0.1  GET     /
+Time                   Status  Latency  IP         Method  Path
+2018/05/09 - 18:52:20  200     6.373µs  127.0.0.1  GET     /
+Time                   Status  Latency   IP         Method  Path
+2018/05/09 - 18:52:21  200     11.119µs  127.0.0.1  GET     /
+Time                   Status  Latency   IP         Method  Path
+2018/05/09 - 18:52:21  200     15.869µs  127.0.0.1  GET     /
+Time                   Status  Latency   IP         Method  Path
+2018/05/09 - 18:52:21  200     14.348µs  127.0.0.1  GET     /
+Time                   Status  Latency  IP         Method  Path
+2018/05/09 - 18:52:21  200     6.463µs  127.0.0.1  GET     /
+Time                   Status  Latency  IP         Method  Path
+2018/05/09 - 18:52:23  200     5.06µs   127.0.0.1  GET     /
+Time                   Status  Latency   IP         Method  Path
+2018/05/09 - 18:52:26  200     10.799µs  127.0.0.1  GET     /1
+Time                   Status  Latency  IP         Method  Path
+2018/05/09 - 18:52:29  200     7.132µs  127.0.0.1  GET     /2
+Time                   Status  Latency   IP         Method  Path
+2018/05/09 - 18:52:32  404     12.793µs  127.0.0.1  GET     /3
+Time                   Status  Latency  IP         Method  Path
+2018/05/09 - 18:52:35  200     8.025µs  127.0.0.1  GET     /
